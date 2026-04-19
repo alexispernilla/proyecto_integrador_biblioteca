@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario de Libros | BiblioTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .btn-primary { background: var(--accent-blue); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 600; }
+        .btn-primary:hover { background: #2563eb; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo"><h1>Biblio<span>Tech</span></h1></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li class="active"><a href="libros.html">Libros e Inventario</a></li>
+                    <li><a href="usuarios.html">Lectores</a></li>
+                    <li><a href="prestamos.html">Préstamos Activos</a></li>
+                    <li><a href="autores.html">Autores y Categorías</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <h2>Gestión de Libros</h2>
+                <div class="user-profile"><span>Admin: Usuario</span><div class="avatar">U</div></div>
+            </header>
+
+            <section class="recent-activity glass-panel">
+                <div class="header-actions">
+                    <h3>Inventario Actual</h3>
+                    <button class="btn-primary">+ Añadir Nuevo Libro</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>ISBN</th>
+                            <th>Ejemplares</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>El Señor de los Anillos</td>
+                            <td>978-0261102385</td>
+                            <td>5</td>
+                            <td><span class="badge success">Disponible</span></td>
+                            <td><a style="color: var(--accent-blue); cursor: pointer;">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Cien Años de Soledad</td>
+                            <td>978-0307474728</td>
+                            <td>0</td>
+                            <td><span class="badge warning">Agotado</span></td>
+                            <td><a style="color: var(--accent-blue); cursor: pointer;">Editar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

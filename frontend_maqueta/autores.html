@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Autores y Categorías | BiblioTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .btn-primary { background: var(--text-muted); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 600; }
+        .btn-primary:hover { background: #64748b; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo"><h1>Biblio<span>Tech</span></h1></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="libros.html">Libros e Inventario</a></li>
+                    <li><a href="usuarios.html">Lectores</a></li>
+                    <li><a href="prestamos.html">Préstamos Activos</a></li>
+                    <li class="active"><a href="autores.html">Autores y Categorías</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <h2>Catálogo Maestro</h2>
+                <div class="user-profile"><span>Admin: Usuario</span><div class="avatar">U</div></div>
+            </header>
+
+            <div class="grid-2">
+                <section class="recent-activity glass-panel">
+                    <div class="header-actions">
+                        <h3>Autores</h3>
+                        <button class="btn-primary">+ Añadir</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Nacionalidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>J.R.R. Tolkien</td><td>Británica</td></tr>
+                            <tr><td>Gabriel García Márquez</td><td>Colombiana</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="recent-activity glass-panel">
+                    <div class="header-actions">
+                        <h3>Categorías</h3>
+                        <button class="btn-primary">+ Añadir</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Fantasía</td><td>Mundos imaginarios, magia y aventuras.</td></tr>
+                            <tr><td>Realismo Mágico</td><td>Elementos mágicos en escenarios realistas.</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

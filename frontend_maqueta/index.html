@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de administración para la biblioteca">
+    <title>Biblioteca | Dashboard Administrativo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <h1>Biblio<span>Tech</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="active"><a href="index.html">Dashboard</a></li>
+                    <li><a href="libros.html">Libros e Inventario</a></li>
+                    <li><a href="usuarios.html">Lectores</a></li>
+                    <li><a href="prestamos.html">Préstamos Activos</a></li>
+                    <li><a href="autores.html">Autores y Categorías</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <h2>Resumen General</h2>
+                <div class="user-profile">
+                    <span>Admin: Usuario</span>
+                    <div class="avatar">U</div>
+                </div>
+            </header>
+
+            <!-- Statistics Cards -->
+            <section class="stats-grid">
+                <div class="stat-card glass-panel accent-blue">
+                    <h3>Total Libros</h3>
+                    <p class="stat-number">1,245</p>
+                </div>
+                <div class="stat-card glass-panel accent-purple">
+                    <h3>Préstamos Activos</h3>
+                    <p class="stat-number">128</p>
+                </div>
+                <div class="stat-card glass-panel accent-pink">
+                    <h3>Lectores Registrados</h3>
+                    <p class="stat-number">840</p>
+                </div>
+            </section>
+
+            <!-- Recent Activity Table -->
+            <section class="recent-activity glass-panel">
+                <h3>Últimos Préstamos</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Libro</th>
+                            <th>Usuario</th>
+                            <th>Fecha Préstamo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>El Señor de los Anillos</td>
+                            <td>Ana Gomez</td>
+                            <td>19/04/2026</td>
+                            <td><span class="badge active">En curso</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cien Años de Soledad</td>
+                            <td>Carlos Ruiz</td>
+                            <td>15/04/2026</td>
+                            <td><span class="badge warning">Por Vencer</span></td>
+                        </tr>
+                        <tr>
+                            <td>1984</td>
+                            <td>María Lopez</td>
+                            <td>10/04/2026</td>
+                            <td><span class="badge success">Devuelto</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

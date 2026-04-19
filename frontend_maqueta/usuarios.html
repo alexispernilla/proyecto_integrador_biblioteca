@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios | BiblioTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .btn-primary { background: var(--accent-pink); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 600; }
+        .btn-primary:hover { background: #db2777; }
+        .user-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .user-card { padding: 1.5rem; text-align: center; border-radius: 1rem; }
+        .user-card .big-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--panel-bg); border: 2px solid var(--accent-pink); margin: 0 auto 1rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+        .user-card h3 { margin-bottom: 0.5rem; }
+        .user-card p { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo"><h1>Biblio<span>Tech</span></h1></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="libros.html">Libros e Inventario</a></li>
+                    <li class="active"><a href="usuarios.html">Lectores</a></li>
+                    <li><a href="prestamos.html">Préstamos Activos</a></li>
+                    <li><a href="autores.html">Autores y Categorías</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <h2>Directorio de Lectores</h2>
+                <div class="user-profile"><span>Admin: Usuario</span><div class="avatar">U</div></div>
+            </header>
+
+            <section class="recent-activity glass-panel" style="background: transparent; border: none; box-shadow: none;">
+                <div class="header-actions">
+                    <h3>Lectores Registrados</h3>
+                    <button class="btn-primary">+ Registrar Lector</button>
+                </div>
+                
+                <div class="user-grid">
+                    <div class="user-card glass-panel">
+                        <div class="big-avatar">AG</div>
+                        <h3>Ana Gomez</h3>
+                        <p>12345678<br>ana@correo.com</p>
+                        <span class="badge active">Libros prestados: 1</span>
+                    </div>
+                    <div class="user-card glass-panel">
+                        <div class="big-avatar">CR</div>
+                        <h3>Carlos Ruiz</h3>
+                        <p>87654321<br>carlos@correo.com</p>
+                        <span class="badge warning">Libros prestados: 2</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
