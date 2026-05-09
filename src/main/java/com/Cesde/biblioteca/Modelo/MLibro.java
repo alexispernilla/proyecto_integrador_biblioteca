@@ -2,6 +2,7 @@ package com.Cesde.biblioteca.Modelo;
 
 import jakarta.persistence.*;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "libro")
@@ -38,6 +39,7 @@ public class MLibro {
     private MCategoria categoria;
 
     @OneToMany(mappedBy = "libro")
+    @JsonIgnore
     private List<MPrestamo> prestamos;
 
     public MLibro() {

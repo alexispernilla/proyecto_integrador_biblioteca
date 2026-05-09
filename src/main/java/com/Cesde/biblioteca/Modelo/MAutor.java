@@ -2,6 +2,7 @@ package com.Cesde.biblioteca.Modelo;
 
 import jakarta.persistence.*;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "autor")
@@ -21,6 +22,7 @@ public class MAutor {
     private String nacionalidad;
 
     @OneToMany(mappedBy = "autor")
+    @JsonIgnore
     private List<MLibro> libros;
 
     public MAutor() {
