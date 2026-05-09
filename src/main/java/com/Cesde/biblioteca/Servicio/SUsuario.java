@@ -34,6 +34,26 @@ public class SUsuario {
         }
     }
 
+    // Actualizar registro
+    public MUsuario actualizarRegistro(Long id, MUsuario mUsuarioActualizado) throws Exception {
+        try {
+            Optional<MUsuario> registroExistente = iUsuario.findById(id);
+            if (registroExistente.isPresent()) {
+                MUsuario usuario = registroExistente.get();
+                usuario.setNombre(mUsuarioActualizado.getNombre());
+                usuario.setApellido(mUsuarioActualizado.getApellido());
+                usuario.setDocumento(mUsuarioActualizado.getDocumento());
+                usuario.setCorreo(mUsuarioActualizado.getCorreo());
+                usuario.setTelefono(mUsuarioActualizado.getTelefono());
+                return iUsuario.save(usuario);
+            } else {
+                throw new Exception("No se puede actualizar porque el registro no existe");
+            }
+        } catch (Exception error) {
+            throw new Exception(error.getMessage());
+        }
+    }
+
     // Consulta individual por llave primaria
     public MUsuario consultaIndividualID(Long id) throws Exception{
         try{

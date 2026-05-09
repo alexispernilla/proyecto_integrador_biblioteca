@@ -56,6 +56,20 @@ public class CCategoria {
         }
     }
 
+    // Actualizar
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarRegistro(@PathVariable Long id, @RequestBody MCategoria mCategoria) throws Exception{
+        try{
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(this.sCategoria.actualizarRegistro(id, mCategoria));
+        }catch (Exception error){
+            return  ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(error.getMessage());
+        }
+    }
+
     // Eliminar
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarRegistro(@PathVariable Long id) throws Exception{

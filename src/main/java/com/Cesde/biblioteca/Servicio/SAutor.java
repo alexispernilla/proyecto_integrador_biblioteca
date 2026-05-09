@@ -34,6 +34,24 @@ public class SAutor {
         }
     }
 
+    // Actualizar registro
+    public MAutor actualizarRegistro(Long id, MAutor mAutorActualizado) throws Exception {
+        try {
+            Optional<MAutor> registroExistente = iAutor.findById(id);
+            if (registroExistente.isPresent()) {
+                MAutor autor = registroExistente.get();
+                autor.setNombre(mAutorActualizado.getNombre());
+                autor.setApellido(mAutorActualizado.getApellido());
+                autor.setNacionalidad(mAutorActualizado.getNacionalidad());
+                return iAutor.save(autor);
+            } else {
+                throw new Exception("No se puede actualizar porque el registro no existe");
+            }
+        } catch (Exception error) {
+            throw new Exception(error.getMessage());
+        }
+    }
+
     // Consulta individual por llave primaria
     public MAutor consultaIndividualID(Long id) throws Exception{
         try{

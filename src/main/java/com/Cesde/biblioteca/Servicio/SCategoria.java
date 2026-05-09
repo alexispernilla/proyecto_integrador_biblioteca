@@ -34,6 +34,23 @@ public class SCategoria {
         }
     }
 
+    // Actualizar registro
+    public MCategoria actualizarRegistro(Long id, MCategoria mCategoriaActualizada) throws Exception {
+        try {
+            Optional<MCategoria> registroExistente = iCategoria.findById(id);
+            if (registroExistente.isPresent()) {
+                MCategoria categoria = registroExistente.get();
+                categoria.setNombre(mCategoriaActualizada.getNombre());
+                categoria.setDescripcion(mCategoriaActualizada.getDescripcion());
+                return iCategoria.save(categoria);
+            } else {
+                throw new Exception("No se puede actualizar porque el registro no existe");
+            }
+        } catch (Exception error) {
+            throw new Exception(error.getMessage());
+        }
+    }
+
     // Consulta individual por llave primaria
     public MCategoria consultaIndividualID(Long id) throws Exception{
         try{

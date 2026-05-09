@@ -56,6 +56,34 @@ public class CPrestamo {
         }
     }
 
+    // Actualizar
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarRegistro(@PathVariable Long id, @RequestBody MPrestamo mPrestamo) throws Exception{
+        try{
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(this.sPrestamo.actualizarRegistro(id, mPrestamo));
+        }catch (Exception error){
+            return  ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(error.getMessage());
+        }
+    }
+
+    // Devolver libro
+    @PutMapping("/devolver/{id}")
+    public ResponseEntity<?> devolverLibro(@PathVariable Long id) throws Exception{
+        try{
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(this.sPrestamo.devolverLibro(id));
+        }catch (Exception error){
+            return  ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(error.getMessage());
+        }
+    }
+
     // Eliminar
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarRegistro(@PathVariable Long id) throws Exception{

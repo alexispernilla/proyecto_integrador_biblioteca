@@ -56,6 +56,20 @@ public class CLibro {
         }
     }
 
+    // Actualizar
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarRegistro(@PathVariable Long id, @RequestBody MLibro mLibro) throws Exception{
+        try{
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(this.sLibro.actualizarRegistro(id, mLibro));
+        }catch (Exception error){
+            return  ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(error.getMessage());
+        }
+    }
+
     // Eliminar
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarRegistro(@PathVariable Long id) throws Exception{

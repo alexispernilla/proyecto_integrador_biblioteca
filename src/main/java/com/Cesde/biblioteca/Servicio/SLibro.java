@@ -34,6 +34,29 @@ public class SLibro {
         }
     }
 
+    // Actualizar registro
+    public MLibro actualizarRegistro(Long id, MLibro mLibroActualizado) throws Exception {
+        try {
+            Optional<MLibro> registroExistente = iLibro.findById(id);
+            if (registroExistente.isPresent()) {
+                MLibro libro = registroExistente.get();
+                libro.setTitulo(mLibroActualizado.getTitulo());
+                libro.setIsbn(mLibroActualizado.getIsbn());
+                libro.setEditorial(mLibroActualizado.getEditorial());
+                libro.setAnioPublicacion(mLibroActualizado.getAnioPublicacion());
+                libro.setCantidadEjemplares(mLibroActualizado.getCantidadEjemplares());
+                libro.setDisponible(mLibroActualizado.isDisponible());
+                libro.setAutor(mLibroActualizado.getAutor());
+                libro.setCategoria(mLibroActualizado.getCategoria());
+                return iLibro.save(libro);
+            } else {
+                throw new Exception("No se puede actualizar porque el registro no existe");
+            }
+        } catch (Exception error) {
+            throw new Exception(error.getMessage());
+        }
+    }
+
     // Consulta individual por llave primaria
     public MLibro consultaIndividualID(Long id) throws Exception{
         try{
